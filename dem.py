@@ -8,7 +8,7 @@ vec = ti.math.vec2
 
 SAVE_FRAMES = False
 
-window_size = 1024  # Number of pixels of the window
+window_size = 1024 # Number of pixels of the window
 max_n = 1024 * 16  # Maximum number of grains
 
 density = 100.0
@@ -214,7 +214,7 @@ def contact(gf: ti.template()):
 source = ti.tools.imread('source.png')
 init(source)
 gui = ti.GUI('Taichi DEM', (window_size, window_size),
-             background_color=0x000022)
+             background_color=0x222222)
 step = 0
 
 if SAVE_FRAMES:
@@ -230,7 +230,7 @@ while gui.running:
     gui.circles(pos, radius=r, color=gf.c.to_numpy())
     gui.circles(colliders.to_numpy(),
                 radius=collider_radius * window_size,
-                color=0xffff55)
+                color=0xffffff)
     if SAVE_FRAMES:
         gui.show(f'output/{step:06d}.png')
     else:
